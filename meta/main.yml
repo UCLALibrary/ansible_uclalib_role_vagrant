@@ -2,9 +2,8 @@
 dependencies: []
 
 galaxy_info:
-  author: geerlingguy
-  description: RedHat/CentOS configuration for Vagrant.
-  company: "Midwestern Mac, LLC"
+  author: ksclarke
+  description: RedHat/CentOS configuration for Vagrant (modified from a geerlingguy build)
   license: "license (BSD, MIT)"
   min_ansible_version: 1.8
   platforms:
