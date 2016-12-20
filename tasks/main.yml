@@ -18,6 +18,7 @@
     - kernel-devel
     - "kernel-devel-{{ kernel_release.stdout }}"
     - libselinux-python
+    - NetworkManager
 
 # Fix slow DNS
 - name: Fix slow DNS (adapted from Bento)
