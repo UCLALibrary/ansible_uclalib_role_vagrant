@@ -3,4 +3,4 @@
 - hosts: localhost
 
   roles:
-    - ansible_uclalib_role_vagrant
+    - uclalib_role_vagrant
