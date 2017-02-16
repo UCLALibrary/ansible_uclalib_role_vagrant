@@ -8,6 +8,7 @@
 - name: Ensure necessary packages are installed
   yum: "name={{ item }} state=present"
   with_items:
+    - openssh-server
     - wget
     - perl
     - cpp
@@ -16,7 +17,7 @@
     - bzip2
     - kernel-headers
     - kernel-devel
-    - "kernel-devel-{{ kernel_release.stdout }}"
+#    - "kernel-devel-{{ kernel_release.stdout }}"
     - libselinux-python
     - NetworkManager
 
@@ -41,6 +42,18 @@
   with_items:
     - { regexp: '^UseDNS', line: 'UseDNS no' }
     - { regexp: '^GSSAPIAuthentication', line: 'GSSAPIAuthentication no' }
+
+# Create vagrant group if needed
+- group:
+    name: vagrant
+    state: present
+
+# Create vagrant user if needed
+- user:
+    name: vagrant
+    shell: /bin/bash
+    groups: wheel,vagrant
+    state: present
 
 # Vagrant SSH configuration
 - name: Configure Vagrant .ssh directory
