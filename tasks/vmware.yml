@@ -33,10 +33,6 @@
     - vmfusion
     - vmfusion-archive
 
-- command: ls -lah /home/vagrant
-  register: vaglist
-- debug: var=vaglist
-
 - name: Mount VMware tools
   mount:
     name: /tmp/vmfusion
