@@ -14,7 +14,10 @@
 
 - name: Run VirtualBox guest additions installation
   shell: sh /tmp/vbox/VBoxLinuxAdditions.run
+  register: ps
   failed_when: false
+
+- debug: var=ps.stdout_lines
 
 - name: Unmount VirtualBox guest additions ISO
   mount:

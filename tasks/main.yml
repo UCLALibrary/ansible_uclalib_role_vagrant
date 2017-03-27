@@ -17,7 +17,7 @@
     - bzip2
     - kernel-headers
     - kernel-devel
-#    - "kernel-devel-{{ kernel_release.stdout }}"
+    - dkms
     - libselinux-python
     - NetworkManager
 
